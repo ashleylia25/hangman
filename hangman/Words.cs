@@ -2,7 +2,7 @@ namespace hangman;
 
 public class Words
 {
-    private string[] words =
+    private string[] _words =
     {
         "tungs",
         "grape",
@@ -14,10 +14,10 @@ public class Words
         "sahur"
     };
 
-    private Random random = new Random();
+    private Random _random = new Random();
 
     public string GetRandomWord()
     {
-        return words[random.Next(words.Length)];
+        return _words[_random.Next(_words.Length)];
     }
 }

@@ -2,24 +2,30 @@ namespace hangman;
 
 class Game
 {
-    private Words words = new Words();
-    private Player player = new Player();
+    private Words _words = new Words();
+    private Player _player = new Player();
     public void Play()
     {
-        string word = words.GetRandomWord();
-        while (true)
+        string secretWord = _words.GetRandomWord();
+        int guessesLeft = 6;
+        while (guessesLeft > 0)
         {
-            Console.Write("Uhodněte slovo (ř písmen): ");
-            string guess = player.Guess();
-            if (guess == word)
+            Console.Write($"Hádejte slovo. (Zbývá {guessesLeft} pokusů): ");
+            string guess = _player.Guess();
+            if (guess == secretWord)
             {
-                Console.WriteLine("Správně!");
-                break;
+                Console.WriteLine("You win!");
+                return;
+            } else if (guess.Length != secretWord.Length)
+            {
+                Console.WriteLine("Musíte hádat slova, které mají pět písmen. Zkuste to znovu.");
             }
-            wordleAhh(word, guess);
+            WordleAhh(secretWord, guess);
+            guessesLeft--;
         }
+        Console.WriteLine($"Konec hry! Správné slovo bylo {secretWord}");
     }
-    private void wordleAhh(string word, string guess)
+    private void WordleAhh(string word, string guess)
     {
         for (int i = 0; i < 5; i++)
         {
