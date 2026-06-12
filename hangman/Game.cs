@@ -4,26 +4,26 @@ class Game
 {
     private Words _words = new Words();
     private Player _player = new Player();
-    public void Play()
+    public void Play(int maxAttempts)
     {
         string secretWord = _words.GetRandomWord();
-        int guessesLeft = 6;
+        int guessesLeft = maxAttempts;
         while (guessesLeft > 0)
         {
-            Console.Write($"Hádejte slovo. (Zbývá {guessesLeft} pokusů): ");
+            Console.Write($"Hadejte slovo. (Zbyva {guessesLeft} pokusu): ");
             string guess = _player.Guess();
             if (guess == secretWord)
             {
-                Console.WriteLine("You win!");
+                Console.WriteLine("Spravne!");
                 return;
             } else if (guess.Length != secretWord.Length)
             {
-                Console.WriteLine("Musíte hádat slova, které mají pět písmen. Zkuste to znovu.");
+                Console.WriteLine("Musite hadat slova, ktera maji pet pismen. Zkuste to znovu.");
             }
             WordleAhh(secretWord, guess);
             guessesLeft--;
         }
-        Console.WriteLine($"Konec hry! Správné slovo bylo {secretWord}");
+        Console.WriteLine($"Konec hry! Spravne slovo bylo {secretWord}.");
     }
     private void WordleAhh(string word, string guess)
     {

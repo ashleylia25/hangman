@@ -5,7 +5,7 @@ class Program
     {
         Introduction intro = new Introduction();
         Game game = new Game();
-        intro.Show();
-        game.Play();
+        int attempts = intro.Show();
+        game.Play(attempts);
     }
 }

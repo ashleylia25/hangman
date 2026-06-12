@@ -4,14 +4,17 @@ public class Player
 {
     public string Guess()
     {
-        string guess;
-
-        do
+        while (true)
         {
-            guess = Console.ReadLine().ToLower();
+            string guess = Console.ReadLine().ToLower();
+            if (guess.Length == 5)
+            {
+                return guess;
+            }
+            else
+            {
+                Console.WriteLine("Slovo musi mit presne 5 pismen!");
+            }
         }
-        while (guess.Length != 5);
-
-        return guess;
     }
 }
