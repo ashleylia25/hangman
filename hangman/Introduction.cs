@@ -9,9 +9,15 @@ public class Introduction
             Console.Clear();
             Console.WriteLine("HANGMAN");
             Console.WriteLine("Zvolte si obtiznost a uhadnete petimistne slovo.");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("1. Easy (9 pokusu)");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("2. Medium (7 pokusu)");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("3. Hard (5 pokusu)");
+            Console.ResetColor();
             string diff = Console.ReadLine();
             if (diff == "1")
             {

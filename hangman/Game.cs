@@ -14,7 +14,9 @@ class Game
             string guess = _player.Guess();
             if (guess == secretWord)
             {
-                Console.WriteLine("Spravne!");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Spravne!!!");
+                Console.ResetColor();
                 return;
             } else if (guess.Length != secretWord.Length)
             {
@@ -23,7 +25,9 @@ class Game
             WordleAhh(secretWord, guess);
             guessesLeft--;
         }
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine($"Konec hry! Spravne slovo bylo {secretWord}.");
+        Console.ResetColor();
     }
     private void WordleAhh(string word, string guess)
     {
