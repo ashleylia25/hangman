@@ -1,20 +1,26 @@
 # Závěrečný projekt - Hangman
-Můj závěrečný projekt je hra Šibenice, kterou mám ale trošku po svém a spíš funguje jak Wordle.
+Můj závěrečný projekt je hra Šibenice, kterou mám ale trošku po svém a spíš funguje jako Wordle.
+
 ## Jak to funguje?
-Hra vám vybere z databáze náhodné pětimístné slovo které musíte uhodnout. Když uhodnete slovo špatně, ukáže vám to, které písmena ve správném slově vůbec nejsou, které jsou na jiné pozici a které jsou na správné pozici. Když uhodnete správné slovo, vypíše se do konzole "Správně!" a hra se vypne.
+Hra vám vybere z databáze náhodné pětimístné slovo, které musíte uhodnout. Když uhodnete slovo špatně, ukáže vám, která písmena ve správném slově vůbec nejsou, která jsou na jiné pozici a která jsou na správné pozici. Když uhodnete správné slovo, vypíše se do konzole "Správně!" a hra se vypne.
+
 Když uhodnete slovo špatně, hra vám ukáže nápovědu pro každé písmeno:
+
 ### Hinty
 - `_` → písmeno se ve slově vůbec nenachází  
 - `?` → písmeno se ve slově nachází, ale je na špatné pozici  
-- `a` → je na správné pozici (nemusí být jenom a - je to prostě písmeno, které je uhádnuté správně)
-### Další funkce
-- Výběr obtížnosti - hráč si na začátku hry vybírá obtížnosti Easy, Medium a Hard (1, 2, 3) - obtížnost spočívá v počtu pokusů na uhádnutí správného slova
-- Ošetřený vstup - když hráč napíše slovo, které je kratší nebo delší než 5 písmen, tak ho hra upozorní, že musí hádat jen pětimístné slova a neubere mu pokus
-- Barevný text - V úvodu jsou obtížnosti zabarvené do zelena, do žluta a do červena. Dále jsou barevné ještě texty, které se zobrazí, když hráč úspěsně uhádne slovo a když prohraje.
-## AI prompty
-AI mi pomohlo rozplánovat projekt do tříd, ale VĚTŠINU obsahu těchto tříd jsou selfwritten.
+- `a` → je na správné pozici (nemusí být jenom „a“ – je to prostě písmeno, které je uhádnuté správně)
 
-Tady tahle část kódu ve třídě Game.cs je vygenerovaná. AI mi vytvořilo cyklus který nám udává status každého písmene v hádaném slově (je ve slově, není ve slově, je na správném místě)
+### Další funkce
+- **Výběr obtížnosti** – hráč si na začátku hry vybírá obtížnosti Easy, Medium a Hard (1, 2, 3) – obtížnost spočívá v počtu pokusů na uhádnutí správného slova  
+- **Ošetřený vstup** – když hráč napíše slovo, které je kratší nebo delší než 5 písmen, hra ho upozorní, že musí hádat jen pětimístná slova, a neubere mu pokus  
+- **Barevný text** – v úvodu jsou obtížnosti zabarvené do zelena, žluta a červena. Dále jsou barevné i texty, které se zobrazí, když hráč úspěšně uhádne slovo a když prohraje  
+- **Horse** – ve hře mám napsaná některá vlastní slova, která hráč může dostat, ale má také 50% šanci, že slovo, které dostane, je "horse"
+
+## AI prompty
+AI mi pomohlo rozplánovat projekt do tříd, ale většina obsahu těchto tříd je self-written.
+
+Tady tahle část kódu ve třídě Game.cs je vygenerovaná. AI mi vytvořilo cyklus, který určuje status každého písmene v hádaném slově (je ve slově, není ve slově, je na správném místě):
 
 ```
 private void ShowHints(string secretWord, string guess)
@@ -35,4 +41,4 @@ private void ShowHints(string secretWord, string guess)
 
 Tento kód mám ale podle své potřeby upravený.
 
-Dále mi jen pomohlo vysvětlit jak měnit barvy textu a vygenerovalo mi dokonce i duhovou animaci pro text "Spravne!!!", ale ten byl pro mě moc složitý a nějak se mi nedařilo tomu kódu porozumět, tak ho tam nakonec nemám.
+Dále mi AI jen pomohlo vysvětlit, jak měnit barvy textu, a vygenerovalo mi dokonce i duhovou animaci pro text "Správně!!!", ale ta byla pro mě moc složitá a nedařilo se mi tomu kódu porozumět, takže ji tam nakonec nemám.
