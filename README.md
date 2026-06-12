@@ -6,7 +6,11 @@ Když uhodnete slovo špatně, hra vám ukáže nápovědu pro každé písmeno:
 ### Hinty
 - `_` → písmeno se ve slově vůbec nenachází  
 - `?` → písmeno se ve slově nachází, ale je na špatné pozici  
-- `a` → je na správné pozici (nemusí být jenom a - je to prostě písmeno, které je uhádnuté správně) 
+- `a` → je na správné pozici (nemusí být jenom a - je to prostě písmeno, které je uhádnuté správně)
+### Další funkce
+- Výběr obtížnosti - hráč si na začátku hry vybírá obtížnosti Easy, Medium a Hard (1, 2, 3) - obtížnost spočívá v počtu pokusů na uhádnutí správného slova
+- Ošetřený vstup - když hráč napíše slovo, které je kratší nebo delší než 5 písmen, tak ho hra upozorní, že musí hádat jen pětimístné slova a neubere mu pokus
+- Barevný text - V úvodu jsou obtížnosti zabarvené do zelena, do žluta a do červena. Dále jsou barevné ještě texty, které se zobrazí, když hráč úspěsně uhádne slovo a když prohraje.
 ## AI prompty
 AI mi pomohlo rozplánovat projekt do tříd, ale VĚTŠINU obsahu těchto tříd jsou selfwritten.
 
